@@ -1,0 +1,119 @@
+% !TeX spellcheck = en_US
+\documentclass[12pt]{article}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+\usepackage{times,fullpage,xspace,fancyhdr,url,color}
+\usepackage[pdftex]{graphicx}
+\usepackage[pdftex,
+            colorlinks=true,
+            urlcolor=black,
+            linkcolor=black,
+            citecolor=black,
+            bookmarksopen=false,
+            bookmarksnumbered=true,
+            pdfstartview=FitH]{hyperref}
+
+\pdfcompresslevel=9
+\newcommand{\leaguename}{RoboCup Robot Soccer League\xspace}
+\hypersetup{
+ pdftitle={\leaguename Rule Book},
+ pdfauthor={Technical Committee RSL},
+}
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{xargs}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\usepackage{siunitx}
+\usepackage[capitalize,noabbrev]{cleveref}
+\usepackage[official]{eurosym}
+\usepackage[useregional]{datetime2}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\DTMlangsetup[en-GB]{ord=raise,monthyearsep={,\space}}
+
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+
+% comment 'disable' in to disable all the todo notes :)
+\usepackage
+[
+%disable
+]{todonotes}
+
+\usepackage[theorems]{tcolorbox}
+\newtcbtheorem[number within=section]{hintbox}{}%
+{colback=red!10,colframe=red!45!black,fonttitle=\bfseries}{th}
+
+\include{common/variables}
+\include{common/dates}
+
+\sloppy
+\newcommand{\ie}{\mbox{i.\,e.}\xspace}
+\newcommand{\eg}{\mbox{e.\,g.}\xspace}
+%\newcommand{\cf}{\mbox{cf.}\xspace}
+\newcommand{\cf}{see\xspace}
+% \newcommand{\comment}[1]{\marginpar{\pdfannot width 4in height .5in depth 8pt {/Subtype /Text /Contents (#1)}}}
+\newcommand{\inparagraph}[1]{\paragraph{#1\hspace{-1em} }}
+
+
+% some colors
+\definecolor{orange}{rgb}{1,0.5,0}
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{green}{rgb}{0,1,0}
+
+
+\title{\leaguename Rule Book}
+\author{\leaguename Technical Committee}
+\date{(DRAFT \RCYear Working Rules Document, as of \today)}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{12pt plus 6pt minus 3 pt}
+\setcounter{tocdepth}{1}
+\widowpenalty=10000
+\clubpenalty=10000
+
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% needed to align an image and text correctly side by side
+\newcommand{\imagebox}[1]{\raisebox{2ex}{\raisebox{-\height}{#1}}}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+  Questions or comments on these rules should be submitted via \url{https://github.com/RoboCup-SPL/Rules/issues}, to the \texttt{\#rule-book} channel on the ? Discord server, or by mail to \url{tba@tba.com}.
+\end{center}
+
+\newpage
+
+\tableofcontents
+\setcounter{tocdepth}{3}
+
+\thispagestyle{fancy}
+
+\clearpage
+
+\cfoot{\thepage}
+\setcounter{page}{1}
+
+\newpage
+
+\include{rules/introduction}
+\newpage
+
+\end{document}
