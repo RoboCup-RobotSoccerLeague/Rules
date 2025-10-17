@@ -1,0 +1,136 @@
+% !TeX root = ../Rules.tex
+% !TeX spellcheck = en_US
+\section{Teams and Players}
+\label{sec:teams_and_players}
+
+\subsection{Number of Players}
+\label{sec:number_of_players}
+A match is played by two teams, each with ...\improvement{Needs to be discussed and defined in TC}
+%a \textbf{maximum} of 5 or 7 players, depending on the competition rules.
+
+At most one player per team on the field may be designated as \emph{goalkeeper}, the others are all \emph{field players}.
+When playing at full strength, a team must have a \emph{goalkeeper} on the field.
+
+Each of the players has a unique jersey number from the set $\{1, 2, 3, \ldots, 20\}$.
+\subsection{Number of Substitutes}
+\label{sec:number_of_substitutes}
+In addition, each team may prepare \emph{substitute players} outside of the field.
+A \emph{substitute player} may be substituted in to become a \emph{field player} or \emph{goalkeeper}.
+
+\subsection{Substitution procedure}
+\improvement{Some more sections of the Humanoid rule book, like substitution procedures for players and goalkeeper, sanctions, etc. should be moved to the chapter Game Process }
+
+\section{Robot Players}
+\label{sec:robot_players}
+
+\subsection{The Design of the Robots}
+\label{sec:design_of_robots}
+Robots participating in the \leaguenameabbr League must have a human-like body shape with a torso, head, two arms, and two legs, as well as human-like symmetry and proportions regarding sizes of the body parts and weight distribution. \info{Definition of humanoid robot from Kajima et al, 2005}
+
+The robots must be able to stand upright on their feet, to walk on their legs and to be able to recover from a fall (get back to a standing position). 
+
+The only allowed modes of locomotion are bipedal walking, running, and jumping, \improvement{as well as soccer-related movements such as dribbling, kicking, or other forms of ball handling}.
+
+The design of the robot's arms, including their length and placement, shall permit arm use and behaviors that are reasonably comparable to those of humans. Examples of permitted uses include \info{Derived from Heinrichs suggestion} 
+assisting in getting up after a fall or picking up and throwing the ball (where otherwise allowed by the rules).
+
+Arm configurations that enable behaviors significantly different from those of humans are not permitted. In particular, 
+robots must not use their arms to provide continuous support for locomotion, such as walking on arms or using arms as additional legs.
+
+\subsubsection{Size Restrictions}
+
+All robots participating in the Humanoid League must comply with the following restrictions:\improvement{to be discussed - including height restrictions}
+
+The length of the legs $H_{leg}$, including the feet, satisfies 0.35{\textperiodcentered}$H_{top}$ ${\leq}$ $H_{leg}$ ${\leq}$ 0.7{\textperiodcentered}$H_{top}$,  where $H_{top}$ is the height of the top of the robot. 
+The length of the leg is measured from the first rotating joint where its axis lies in the plane parallel to the standing ground to the tip of the foot.
+
+A classic piece of human anatomy and art history, Leonardo da Vinci’s “Vitruvian Man” famously depicts a man whose arm span is equal to his height, creating a 1:1 ratio. 
+Therefore, the arm span, $A_{span}$, including the hands, should satisfy 0.8{\textperiodcentered}$H_{top}$ ${\leq}$ $A_{span}$ ${\leq}$ 1.2{\textperiodcentered}$H_{top}$.
+
+Based on $H_{top}$, the following size restrictions apply:
+
+\begin{itemize}
+\item xx cm ${\leq}$ $H_{top}$ ${\leq}$ xxx cm to play in the xy class, \improvement{to be discussed - define divisions}
+\item xxx cm ${\leq}$ $H_{top}$ ${\leq}$ xxx cm to play in the z class.
+\end{itemize}
+
+$H_{top}$ is defined as the height of the robot when standing upright (with fully extended knees).
+$H_{top}$ is measured with the head of the robot oriented in such a way that it
+is tilted to either its maximum upwards tilt angle or the horizon line,
+whichever is lower.
+
+The height of the head $H_{head}$, including the neck, satisfies $0.1 \cdot H_{top} \leq H_{head} \leq 0.3 \cdot H_{top}$. $H_{head}$ is defined as the vertical distance from the axis of the first arm joint at the shoulder to the top of the head.
+
+\subsubsection{Weight Restrictions}
+
+The robot's Body-Mass Index (BMI) is defined as follows:
+$\mathrm{BMI} = \frac{M}{{H_{top}}^2}$,
+where $M$ is the mass of the robot in kg and $H_{top}$ its height in meters.
+
+The Body Mass Index (BMI) of the robot should be: $5 \leq \mathrm{BMI} \leq 30$.
+
+\subsubsection{Safety}\info{From the humanoid league rules, to be discussed}
+
+A player must not use equipment or wear anything that is dangerous to himself or another player (including any kind of jewellery)\unsure{do we need to mention jewellery?}.
+
+Robots competing in the physical competition must be equipped with an emergency stop button that makes the robot immediately desist with all motions, 
+or ideally go limp and/or cut power to the actuators.
+In addition to the emergency stop button, robots may only have up to two additional physical or virtual buttons: One to start the robot behaviour and one to stop the behaviour. 
+The buttons must be clearly labeled. If the robot has more buttons that cannot be detached, they must be visibly masked during the games.
+
+In ...tbd... size, robot handlers are allowed to carry an additional remote emergency stop button. \improvement{to be discussed, will there still be robot handlers?}
+This button must be worn either around the neck or on the belt of the robot handler and must be clearly marked. 
+Each emergency stop button can only be connected to the robot of the robot handler that holds the button.
+The remote emergency button cannot perform any additional functions and does not replace the regular emergency button. 
+Robot handlers must keep their hands clearly away from the button unless the button is being pressed. 
+Robot handlers must not use the remote emergency button to intentionally incapacitate their robots.
+
+\improvement{to be discussed, add other safety measures from our discussion?}
+
+\label{sec:design_of_robots}
+
+\subsection{Hardware}
+\label{sec:hardware}
+
+\improvement{to be discussed, divisions, list of permitted robots, self-built robots, etc.}
+
+Modifications or additions to the robot hardware are allowed.\improvement{to be discussed}
+
+No additional hardware is permitted including off-board sensing or processing systems.
+Additional sensors besides those originally installed on the robots are likewise not allowed.
+
+\subsection{Sensors}
+\label{sec:sensors}
+
+Teams participating in the \leaguenameabbr League competitions are encouraged to equip their robots with sensors that have an equivalent in human senses. 
+These sensors must be placed at a position roughly equivalent to the location of the human{\textquoteright}s biological sensors. In particular, ...
+\improvement{to be discussed}
+
+\subsection{Team Markers}
+\label{sec:team_markers}
+
+\info{to be discussed}
+
+\subsection{Goalkeeper}
+\label{sec:goalkeeper}
+
+The \emph{goalkeeper} may use any of the allowed jersey numbers.
+The \emph{goalkeeper} must wear a jersey with a primary color different from the primary colors used by the \emph{field players} of both teams.
+
+\subsection{Communication and Control}
+
+Robots participating in the \leaguenameabbr league competitions must act autonomously while a competition is running. No external power supply, teleoperation, remote control, or remote brain of any kind is allowed.
+Communication is only allowed among robots on the field, \improvement{between the robots and the referees,} and between the robots and the GameController.
+
+\subsubsection{Non-wireless Communications}
+\label{sec:acoustic}
+
+In general there are no restrictions on communication between robots in play on the field using visual signaling (\eg gestures) or the robot's built-in microphones, speakers, and infrared transceivers.
+However, communication that causes excessive discomfort to an audience, affects the safety of an audience, or violates normal playing rules is not permitted.
+
+\subsubsection{Wireless Communications}
+\label{sec:wireless}
+
+... \improvement{To be discussed. Take this section from the SPL rules?}
+
+The use of remote processing/sensing is prohibited.
