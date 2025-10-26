@@ -15,10 +15,24 @@
 \subsubsection{Field-Side Selection and Initial Kick-off}
 \subsubsection{Initial Kick-off}
 \subsubsection{Kick-off}
+\label{sec:kick-off}
 \subsubsection{Ball in play}
 
 \subsection{Goals}
 \subsubsection{Goal Scored}
+\label{sec:goal}
+
+A goal, including own goal, is achieved when the entire ball (not only the center of the ball) goes over the goal-side edge of the goal line, \ie the ball is completely inside the goal.\footnote{
+  The goal line is part of the field.
+}
+
+The head referee signals a goal by a single whistle blow, followed by the call ``Goal \textless color\textgreater''.
+The head referee should point with one arm towards the center of the field.
+To assist robots listening for whistles, the referee should blow the whistle from on the carpet at the end of the fields where the goal was scored.
+
+After a team scores a goal, the game proceeds with a kick-off (\cf~\cref{sec:kick-off}) for their opponents.
+The GameController signal (to the robots) of a goal being scored, will be delayed by \qty{\GoalScoredDelay}{\second}.
+
 \subsubsection{Invalid Goal}
 \subsubsection{Competition Rules}
 
@@ -47,11 +61,36 @@
 
 \subsection{Timeout}
 \subsubsection{Request for Timeout}
+\label{sec:request_for_timeout}
+
+Each team can call a \textbf{maximum of 1 timeout per game} with a total time of no more than \textbf{5 minutes}.
+During this time, both teams may change robots, change programs, or anything else that can be done within the time allotted.
+During normal game time, a team may call a timeout at any stoppage of play (after a goal, stuck game, before a half, etc.).
+Alternatively, a team may call a timeout before a penalty shootout if they have not used their timeout yet (\cf \cref{sec:penalty_shoot-out}).
+
+The timeout ends when the team that called the timeout says they are finished, at which time they must be ready to play.
+The other team must be ready to play at the time the timeout runs out, or \textbf{2 minutes} after a prematurely called end of the timeout, whichever is earlier.
+If the other team is not ready to play in time, it has to call a timeout of its own.
+
+The clock stops during timeouts, even during the preliminaries, and is reset to the time when the current stoppage of play began.
+
+After the completion of the timeout, the game resumes with a kick-off for the team which did not call the timeout.
+
+If a team is not ready to play at the assigned time for a game, the referee will call the timeout for that team.
+After the expiration of such a timeout, if the team is still not ready to play then the referee shall start the game with only one team on the field.
+The team that was not ready can return its robots to the field as per the rules for ``Request for Pick-up''.
+If both teams are not ready, the referee will call timeouts for both teams.
+This ``double timeout'' expires after 10 minutes.
+
 \subsubsection{Referee Timeout}
 
 \subsection{Extra Time}
 
 \subsection{Mercy Rule}
+\label{sec:mercy_rule}
+
+A game will conclude once the game score shows a goal difference of 10.
+Ending the game is mandatory once a goal difference of 10 is reached.
 
 \subsection{Drop Ball Rule}
 

@@ -3,6 +3,9 @@
 \section{The Official RoboCup Competition Rules}
 \label{sec:robocup_rules}
 
+This section contains rules that are not directly relevant for games and that may not apply at local opens.
+However, these rules will be upheld at the yearly international RoboCup competition.
+
 \subsection{Qualification Procedure and Code Usage}
 \label{sec:qualification}
 
@@ -32,8 +35,38 @@
 \subsection{Rules for Forfeiting}
 \label{sec:forfeit}
 
+Teams who do not make a good faith effort to participate in a scheduled game are considered to forfeit the game.
+
+If a team notifies the technical committee that they wish to forfeit less than two hours before their scheduled game time, simply fails to show up for their game, or decides during their game that they wish to forfeit, then the opposing team will play the match against an empty field.
+However, any own goals will not be scored.
+Hence, after an opponent forfeits, the team playing against an empty field cannot do worse than they were doing at the time the opponent decided to forfeit.
+Teams may choose to forfeit at any stoppage of play.
+However, once a forfeit is announced, they may not reverse this decision.
+
+If a team notifies the technical committee that they wish to forfeit at least two hours before their schedule game time, the following procedure will be followed.
+\begin{itemize}
+  \item If a team chooses to forfeit a match in the round robin games the other team plays the match against an empty field.
+    However, any own goals will not be scored.
+  \item If a team chooses to forfeit in a knock-out game it gets replaced by the next best qualified team, \ie the team it kicked out or left behind in the round robins.
+\end{itemize}
+
+Note that there are a few unlikely cases that are not covered by these rules.
+If a situation is not covered by these rules, the technical committee and the organizing committee will work together to make a decision.
+
+Any forfeit will result in a qualification penalty being recorded (\cf \cref{sec:qualificationPenalties}) but the circumstances of the forfeit will affect the severity of the offense and the impact on future qualification.
+
 \subsection{Source Code Releases}
 \label{sec:code_release}
+
+All teams that have participated in RoboCup must subsequently release code from that year's codebase.
+The code must be licensed such that other RoboCup participants can use it, although the license may place conditions on its use.
+The preferred type of release is the full source code of the software that was running in the team's last game at RoboCup.
+In case this is not possible (\eg due to legal reasons), it is required that at least the source code related to the novel contributions (as given during the qualification process) is published.
+Participation in technical challenges may come with additional requirements on the amount of components to be released.
+
+The source code must be published and its availability announced on the league mailing list (\url{\LeagueEmail}) by \DTMdate{\CodeReleaseAnnouncementDate}.
+Failing to publish source code by the deadline will result in a qualification penalty being recorded (\cf~\cref{sec:qualificationPenalties}).
+
 
 \subsection{Subsequent Year Pre-qualification Procedure}
 \label{sec:pre_qualification}
@@ -43,6 +76,24 @@
 
 \subsection{Disqualification During Competition}
 \label{sec:disqualification_during_competition}
+
+A team may be disqualified during the RoboCup competition for:
+\begin{itemize}
+  \item A serious violation of the terms of a team's qualification
+  \item Gaining a Qualification Penalty during the course of the competition~(\cf \cref{sec:qualificationPenalties})
+  \item A serious breach of ethics, or serious behavior unbecoming of participants of RoboCup.
+\end{itemize}
+
+\textbf{Example.} A team promises to use their novel contribution in RoboCup games, but fails to do so.
+Alternatively, a team deliberately misleads the technical committee about the novelty of their work and/or their contribution to the league, such that they are deemed to have copied another team.
+
+A team can \textit{only} be disqualified by a decision of the \textit{Board of Trustees of the RoboCup Federation}.
+The RoboCup Soccer League executive must petition the board in writing at their soonest possible availability.
+The executive must simultaneously inform the relevant team of the petition in writing.
+
+A disqualified team automatically forfeits all games~(\cf \cref{sec:forfeit}).
+For practicality, the disqualification should not apply \textit{retroactively}.
+However, by majority vote of the team leaders, provisions for retroactive disqualification may be made in the fairness of the affected teams.
 
 \subsection{Awards}
 \label{awards}
