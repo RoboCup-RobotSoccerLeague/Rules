@@ -23,6 +23,32 @@ A \emph{substitute player} may be substituted in to become a \emph{field player}
 \section{Robot Players}
 \label{sec:robot_players}
 
+
+
+\subsection{Approved Standard Platforms}
+The following commercially available robotic platforms are approved for participation in the RSL. 
+
+The following are the list of pre-approved standard platforms that require no modifications:
+
+\begin{tblr}{
+  width=1.0\linewidth,
+  colspec = {Q[l]Q[l]X[l]},
+  row{1}={fg=black, font=\bfseries}, %, 
+  hline{2} = {solid},
+  hline{3-Y} = {dashed},
+  vline{2,3} = {abovepos = -1, belowpos = -1},
+}
+Manufacturer & Model & Restrictions\\
+%
+Aldebaran & Nao V5, and Nao V6 \\
+Robotis   & DARwIn-OP \\
+Booster   & T1, and K1 \\
+Fourier   & GR1, GR1-Pro, and GR2 \\
+Unitiree  & G1++, H1++ \\
+\end{tblr}
+
+Additional humanoid robot platforms can be approved upon request. Please send your request for approval to \url{rc-spl-tc@lists.robocup.org}.
+
 \subsection{The Design of the Robots}
 \label{sec:design_of_robots}
 Robots participating in the \leaguenameabbr must have a human-like body shape with a torso, head, two arms, and two legs, as well as human-like symmetry and proportions regarding sizes of the body parts and weight distribution. \info{Definition of humanoid robot from Kajima et al, 2005}
@@ -105,6 +131,41 @@ Additional sensors besides those originally installed on the robots are likewise
 Teams participating in the \leaguenameabbr League competitions are encouraged to equip their robots with sensors that have an equivalent in human senses. 
 These sensors must be placed at a position roughly equivalent to the location of the human's biological sensors. In particular, ...
 \improvement{to be discussed}
+
+The sensors and their placement shall be chosen such that it allows the robot a spatial perception simmilar to humans.
+
+The sensors can be evaluated along the following two guidelines:
+1. Sensors directly emulating human senses (e.g., a camera, microphone)
+2. Sensors that compensate for current shorcommings in technology and state of the research (e.g., two vertical cameras in the NAO), as long as this does not undermine current research effors.
+
+The following table summarizes pre-approved sensors:
+
+\begin{tblr}{
+  width=1.0\linewidth,
+  colspec = {Q[l]X[l]},
+  row{1}={fg=black, font=\bfseries}, %, 
+  hline{2} = {solid},
+  hline{3-Y} = {dashed},
+  vline{2} = {abovepos = -1, belowpos = -1},
+}
+Sensor Type & Comments \\
+RGB camera (opening angle $\leq$ \SI{180}{\degree})& \\
+Stereo camera & \\
+Event camera & \\
+
+Microphone array & \\
+
+Gyro & \\
+Accelerometer & \\
+IMU (without compas) & \\
+
+Force sensors & \\
+Touch sensors & \\
+Buttons / Bumpers & \\
+"Other" forms of Haptic Sensors & \\
+
+(all intrinsic sensors: temperature, current, joint positions, etc.)  & \\
+\end{tblr}
 
 \subsection{Team Markers}
 \label{sec:team_markers}
