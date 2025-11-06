@@ -14,7 +14,7 @@ When playing at full strength, a team must have a \emph{goalkeeper} on the field
 Each of the players has a unique jersey number from the set $\{1, 2, 3, \ldots, 20\}$.
 \subsection{Number of Substitutes}
 \label{sec:number_of_substitutes}
-In addition, each team may prepare \emph{substitute players} outside of the field.
+In addition, each team may prepare \emph{substitute players} \improvement{Number of allowed substitutes, needs clarity - limited, unlimited?} outside of the field.
 A \emph{substitute player} may be substituted in to become a \emph{field player} or \emph{goalkeeper}.
 
 \subsection{Substitution procedure}
@@ -23,9 +23,35 @@ A \emph{substitute player} may be substituted in to become a \emph{field player}
 \section{Robot Players}
 \label{sec:robot_players}
 
+
+
+\subsection{Approved Standard Platforms}
+The following commercially available robotic platforms are approved for participation in the RSL. 
+
+The following are the list of pre-approved standard platforms that require no modifications:
+
+\begin{tblr}{
+  width=1.0\linewidth,
+  colspec = {Q[l]Q[l]X[l]},
+  row{1}={fg=black, font=\bfseries}, %, 
+  hline{2} = {solid},
+  hline{3-Y} = {dashed},
+  vline{2,3} = {abovepos = -1, belowpos = -1},
+}
+Manufacturer & Model & Restrictions\\
+%
+Aldebaran & Nao V5, and Nao V6 \\
+Robotis   & DARwIn-OP \\
+Booster   & T1, and K1 \\
+Fourier   & GR1, GR1-Pro, and GR2 \\
+Unitiree  & G1++, H1++ \\
+\end{tblr}
+
+Additional humanoid robot platforms can be approved upon request. Please send your request for approval to \url{rc-spl-tc@lists.robocup.org}.
+
 \subsection{The Design of the Robots}
 \label{sec:design_of_robots}
-Robots participating in the \leaguenameabbr League must have a human-like body shape with a torso, head, two arms, and two legs, as well as human-like symmetry and proportions regarding sizes of the body parts and weight distribution. \info{Definition of humanoid robot from Kajima et al, 2005}
+Robots participating in the \leaguenameabbr must have a human-like body shape with a torso, head, two arms, and two legs, as well as human-like symmetry and proportions regarding sizes of the body parts and weight distribution. \info{Definition of humanoid robot from Kajima et al, 2005}
 
 The robots must be able to stand upright on their feet, to walk on their legs and to be able to recover from a fall (get back to a standing position). 
 
@@ -39,7 +65,7 @@ robots must not use their arms to provide continuous support for locomotion, suc
 
 \subsubsection{Size Restrictions}
 
-All robots participating in the Humanoid League must comply with the following restrictions:\improvement{to be discussed - including height restrictions}
+All robots participating in the \leaguenameabbr must comply with the following restrictions:\improvement{to be discussed - including height restrictions}
 
 The length of the legs $H_{leg}$, including the feet, satisfies 0.35{\textperiodcentered}$H_{top}$ ${\leq}$ $H_{leg}$ ${\leq}$ 0.7{\textperiodcentered}$H_{top}$,  where $H_{top}$ is the height of the top of the robot. 
 The length of the leg is measured from the first rotating joint where its axis lies in the plane parallel to the standing ground to the tip of the foot.
@@ -103,8 +129,126 @@ Additional sensors besides those originally installed on the robots are likewise
 \label{sec:sensors}
 
 Teams participating in the \leaguenameabbr League competitions are encouraged to equip their robots with sensors that have an equivalent in human senses. 
-These sensors must be placed at a position roughly equivalent to the location of the human{\textquoteright}s biological sensors. In particular, ...
+These sensors must be placed at a position roughly equivalent to the location of the human's biological sensors. In particular, ...
 \improvement{to be discussed}
+
+The sensors and their placement shall be chosen such that they allow the robot a spatial perception similar to humans.
+%
+The sensors are evaluated along the following two general guidelines:
+\begin{enumerate}
+    \item \emph{Foster and encourage research and development towards human-like perception capabilities.}\\
+    Sensors aiming to directly emulate human senses like camera, microphone. Use o such sensors is explicitly \emph{encouraged}.
+    \item \emph{Enable research and development under the constraints of the current state of the art in technology and research, as long as this does not undermine current research efforts as declared in point 1.} \\
+    Sensors that compensate for current shortcomings in technology and state of the research like one dimensional distance sensors with limited range or two vertical cameras in the robot NAO.
+\end{enumerate}
+
+Generally, \emph{passive sensors} are preferred to \emph{active} sensors that actively emit signals.
+
+\subsubsection{Intrinsic Perception and Proprioception}
+Any sensing capability aiming at measuring internal state of the robot are permitted. 
+This includes temperature, current consumed by the motors, joint positions etc.
+
+\subsubsection{Visual Perception}
+The visual sensors, e.g., cameras of the robot shall be arranged such that the combined visual field is \emph{contiguous} and limited to dimensions similar to a human, which corresponds to limitations in the opening angle: horizontal $\leq$ \SI{180}{\degree} and vertical $\leq$ \SI{140}{\degree}.
+
+% Placement
+The visual sensors shall be located in the head of the robot.
+
+% 
+The combined dynamic visual field that can be observed by the robot solely by moving its cameras (similar to human eye movements) and the head is limited to  horizontal $\leq$ \SI{220}{\degree} and vertical $\leq$ \SI{180}{\degree}.
+
+The cameras are restricted to visual information in range of the light visible to humans.
+
+The cameras can provide dense visual information such as a rasterized image or sparse information such as visual events (event cameras).
+
+
+\subsubsection{Visual (dense) Depth Perception}
+
+Passive integrated devises that provide dence depths information, such as stereo cameras, are permitted and encouraged.
+
+Active integrated devises that provide depths information, such as cameras with active infrared projector or time of flight cameras, are permitted, but discouraged.
+Their use might be prohibited in the future.
+
+
+\subsubsection{Orientation}
+
+Sensors providing information regarding robot's orientation in space with relation to the ground are permitted. This includes such sensory like gyro, accelerometer as well as integrated inertial measurement units (IMU) as long as they provide only relative measurements and no measurements of the absolute direction such as a compas.
+
+An IMU with an integrated compas can be used as long as the compas is disabled.
+
+The sensors can be placed in the head and / or in the torso of the robot.
+
+The number of the orientation sensors is limited to 4.
+
+
+\subsubsection{Sound Perception}
+The sound sensors, e.g., microphones shall be placed in the head of the robot.
+The number of the microphones is limited to ??
+
+\subsubsection{Haptic Sensing}
+Any passive sensor allowing haptic measurement is permitted, such as force sensors, touch sensors, buttons / bumpers, capacitative touch sensors.
+
+Haptic sensors can be placed at any location of the robot's body and are not limited in number.
+
+
+\subsubsection{Distance Sensing}
+
+Active and passive sensors for one dimensional distance sensing with limited range are permitted as long as they compensate for shortcomings in the spatial awareness of the robot in the close proximity.
+
+%The range is limited to ...
+The number of such distance sensors is limited to 4.
+
+The use of distance sensors is discouraged and might be prohibited in the future.
+
+\subsubsection{Summary}
+The following table briefly summarizes pre-approved sensors.
+The use of listed sensors that are considered human-like is encouraged.
+The use of listed sensors that are not considered human-like is accepted, but discouraged and might be prohibited or limited in the future.
+
+\begin{tblr}{
+  width=1.0\linewidth,
+  colspec = {Q[l]Q[l]X[l]},
+  row{1}={fg=black, font=\bfseries}, %, 
+  hline{2} = {solid},
+  hline{3-Y} = {dashed},
+  vline{2,3} = {abovepos = -1, belowpos = -1},
+}
+Sensor Type & Human-Like & Comments \\
+
+%Visual Perception
+RGB camera & yes & opening angle limit: horizontal $\leq$ \SI{180}{\degree}, vertical $\leq$ \SI{140}{\degree}\\
+Stereo camera & yes & \\
+Event camera & yes & \\
+
+Active RGB-D based on infrared projection & no & conditionally, under discussion \\
+Active RGB-D based on time of flight (TOF) & no & conditionally, under discussion \\
+
+% sound perception
+Microphone array & yes & \\
+
+% Orientation
+Gyro & yes & \\
+Accelerometer & yes & \\
+Integrated inertial measurement units (IMU) & yes & no compass or must be disabled and not used\\
+
+% Haptic sensing
+Force sensors & yes & \\
+Touch sensors & yes & \\
+Buttons / Bumpers & yes & \\
+Capacitative touch sensors & yes & \\
+
+% Distance sensing
+Near range infrared sensor & no & \\
+Sonar / ultrasound sensors & no & \\
+1D LIDAR and laser range sensor & no & with limited range \\
+
+% Intrinsic sensors
+Intrinsic sensors  & yes & temperature, current, joint positions, etc. \\
+\end{tblr}
+
+
+
+\unsure{Clarity needed for manufacturers that do not provide IMU details, just access to data}
 
 \subsection{Team Markers}
 \label{sec:team_markers}
