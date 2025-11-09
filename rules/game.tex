@@ -38,9 +38,9 @@ The primary states are:
     \item[Initial.] The robots are free to move at teams convenience and humans are allowed to interact with the robots.
     This state is not limited in time and teams have access to the field.
     The GameController will activate this state before \texttt{ready} (i.e at the beginning of a half and during a timeout).
-    A manual input can transition the robot to \texttt{attended} when the robot is left unattended on the field.
+    A manual input can transition the robot to \texttt{unattended} when the robot is left unattended on the field.
 
-    \item[Attended.]
+    \item[Unattended.]
     This state is used when a human  enters or is near the field.
     The GameController can activate this state from any other state beside \texttt{playing}. 
     Robots in this state must immediately stop any motion, assume a safe posture (e.g. seated or crouched), and remain stationary.
@@ -90,7 +90,7 @@ The colors corresponding to the game states are:
 \midrule
 \texttt{Unstiff} & Blue (blinking) \\
 \texttt{Initial} & White \\
-\texttt{Attended} & Alternating Cyan/Red (every 254 ms) \\
+\texttt{Unattended} & Alternating Cyan/Red (every 254 ms) \\
 \texttt{Ready} & Blue \\
 \texttt{Set} & Yellow \\
 \texttt{Playing} & Green \\
