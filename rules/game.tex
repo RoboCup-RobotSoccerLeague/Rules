@@ -30,7 +30,7 @@ The primary states are:
 \begin{description}
   \item[Unstiff.] This state ensures consistent and safe handling of robots.
     At any time, teams must have a way to manually trigger this state.
-    The robot should move to a safe position and unstiffen all joints.
+    The robot must move to a safe position and unstiffen all joints.
     So while in the \texttt{unstiff} state the robot is not allowed to move in any fashion! 
     After booting, the robots are in their \texttt{unstiff} state.
     Executing the same input while in the \texttt{unstiff} state, permits the robot to stiffen its joints and return to the \texttt{initial} state, or a state as indicated by GameController.
@@ -38,13 +38,13 @@ The primary states are:
     \item[Initial.] The robots are free to move at teams convenience and humans are allowed to interact with the robots.
     This state is not limited in time and teams have access to the field.
     The GameController will activate this state before \texttt{ready} (i.e at the beginning of a half and during a timeout).
-    A manual input to the robot will switch it to the \texttt{attended} state as human leave the robot unsupervised on the field.
+    A manual input can transition the robot to \texttt{attended} when the robot is left unattended on the field.
 
     \item[Attended.]
     This state is used when a human  enters or is near the field.
-    The GameController can active this state from any other state beside \texttt{playing}. 
+    The GameController can activate this state from any other state beside \texttt{playing}. 
     Robots in this state must immediately stop any motion, assume a safe posture (e.g. seated or crouched), and remain stationary.
-    Robots cannot resume play until the human has exited the field area and the GameController authorizes a transition to a different state.
+    Robots are not allowed to resume play until the human has exited the field area and the GameController authorizes a transition to a different state.
     Teams must implement a safe and reliable method for triggering this state, both automatically and manually.
 
   \item[Ready.] In this state, the robots walk to their legal positions for kick-off (\cf \cref{sec:kick-off}) or a penalty kick (\cf \cref{sec:penalty_kick}).
@@ -63,14 +63,14 @@ The primary states are:
     During the \texttt{playing} state, the GameController can activate the sub-states for free kicks (\cf \cref{sec:free_kick}).
 
   \item[Penalized.] A robot is in this state when it has been \texttt{penalized}.
-    The robot must walk to the side of the field according to panelty procedure (\cf \cref{sec:penalty_procedure}).
+    The robot must walk to the side of the field according to penalty procedure (\cf \cref{sec:penalty_procedure}).
 
   \item[Expulsed.] A robot is in this state when it has been \texttt{expulsed}.
-    The only allowed movement is standing up after falling or moving to a safe posture (e.g. seated or crouched).
-    Any other movement (including turning the head) is disallowed.
+    The only permitted movement is transitioning into a safe posture (e.g., seated or crouched).
+    If the robot has fallen, it must remain down.
 
-  \item[Pickup.] A robot enter this state when a team request the robot to be pickup. 
-    It will then walk to his pickup location (\cf \cref{sec:pickuprobots}).
+  \item[Pickup.] A robot enters this state when its team requests a pick-up.
+    It must walk to its designated pick-up location (see \cref{sec:pickuprobots}).
 
   \item[Finished.] This state is reached when a half is finished.
 
@@ -80,20 +80,28 @@ The referee will announce the start of the \texttt{playing} state with a single 
 The GameController \texttt{playing} signal will be delayed by \qty{\PlayingDelayTime}{\second}.
 This delay applies to both kick-off and penalty kicks.
 
-The current game state should be displayed on the LED of the robot.
+The current game state must be displayed on the LED of the robot.
 The colors corresponding to the game states are:
-\begin{itemize}
-  \item \texttt{Unstiff}: Blue-Blinking
-  \item \texttt{Initial}: White
-  \item \texttt{Attended}: Blinking between Cyan and Red every 254ms
-  \item \texttt{Ready}: Blue
-  \item \texttt{Set}: Yellow
-  \item \texttt{Playing}: Green
-  \item \texttt{Penalized}: Red
-  \item \texttt{Expulsed}: Purple
-  \item \texttt{Pickup}: Orange
-  \item \texttt{Finished}: White
-\end{itemize}
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Game State} & \textbf{LED Color Pattern} \\
+\midrule
+\texttt{Unstiff} & Blue (blinking) \\
+\texttt{Initial} & White \\
+\texttt{Attended} & Alternating Cyan/Red (every 254 ms) \\
+\texttt{Ready} & Blue \\
+\texttt{Set} & Yellow \\
+\texttt{Playing} & Green \\
+\texttt{Penalized} & Red \\
+\texttt{Expulsed} & Purple \\
+\texttt{Pickup} & Orange \\
+\texttt{Finished} & White \\
+\bottomrule
+\end{tabular}
+\caption{LED color patterns for robot game states.}
+\end{table}
 
 The current GameController requires robots to know both their team number and their robot number within the team.
 It is each team's responsibility to make sure this is correctly configured.
