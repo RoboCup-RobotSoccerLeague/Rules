@@ -4,8 +4,6 @@
 \section{Competition Structure}
 \label{sec:competition}
 
-\todo[inline]{Aims and goals of the competition structure}
-
 The general aims of the structure are:
 \begin{enumerate}
     \item \emph{Encourage} overall progress towards the long-term goal -- final game 2050;
@@ -53,7 +51,7 @@ The robots and teams must fulfill the following criteria to compete in the games
 Division & Max Robot Height & Max Robot Weight \\
 
 small & 100 cm & 10 kg \\
-mid   & 130 cm & 25 kg \\
+mid   & 120 cm & 22 kg \\
 large & any size & any weight \\
 \end{tblr}
 
@@ -69,7 +67,7 @@ Examples of robots in each division:
   row{1}={fg=black, font=\bfseries}, %, 
   hline{2} = {solid},
   hline{3-Y} = {dashed},
-  vline{2,3} = {abovepos = -1, belowpos = -1},
+  vline{2} = {abovepos = -1, belowpos = -1},
 }
 Division & Permitted Robots \\
 
@@ -96,9 +94,9 @@ The following limits apply to foundation and advanced games in each division:
 }
 Division & Foundation Players per Team & Advanced Players per Team\\
 
-small & 5 & 7 \\
+small & 4 & 7 \\
 mid   & 3 & 5 \\
-large & 3 & 3 \\
+large & 3 & 5 \\
 \end{tblr}
 
 
@@ -106,19 +104,38 @@ Field sizes:
 
 \begin{tblr}{
   width=1.0\linewidth,
+  colspec = {Q[l]X[c]X[c]},
+  row{1}={fg=black, font=\bfseries}, %, 
+  hline{2} = {solid},
+  hline{3-Y} = {dashed},
+  vline{2} = {abovepos = -1, belowpos = -1},
+}
+Division & Min Field Size in m & Max Field Size in m\\
+%
+small & \SetCell[c=2]{c} 6 x 9 &  \\
+mid   & \SetCell[c=2]{c} 9 x 14 & \\
+large &  12 x 18 &  14 x 22    \\
+\end{tblr}
+
+\textbf{NOTE:} The concrete field size for the large division will be determined by the organizing committee and the local organizing committee, depending on the availability of space and resources.
+
+
+Ball types and sizes:
+
+\begin{tblr}{
+  width=1.0\linewidth,
   colspec = {Q[l]X[l]},
   row{1}={fg=black, font=\bfseries}, %, 
   hline{2} = {solid},
   hline{3-Y} = {dashed},
-  vline{2,3} = {abovepos = -1, belowpos = -1},
+  vline{2} = {abovepos = -1, belowpos = -1},
 }
-Division & Field Size \\
+Division & Allowed ball types and size\\
 
-small & 6 x 9   \\
-mid   & 9 x 14  \\
-large & 12 x 18 \\
+small & SPL ball (10 cm), FIFA mini ball size 1(14 cm) \\
+mid   & FIFA size 3 (preferred), FIFA size 4 \\
+large & FIFA size 5 \\
 \end{tblr}
-
 
 \subsection{Mixed Competition -- Cross Division}
 \label{sec:com_mixed}
@@ -138,9 +155,9 @@ In the mixed competition, Super-Teams consisting of two or more teams compete in
   vline{2,3} = {abovepos = -1, belowpos = -1},
 }
 Mixed Competition & Participating Division    & Players per Super-Team & Min Players by Team  & Field Size \\
-mixed-small & small       & 11 & 3 & 9 x 14  \\
-mixed-mid   & mid + large & 7  & 3 & 12 x 18 \\
-mixed-large & large       & 5  & 2 & 12 x 18 \\
+mixed-small & small       & 11 & 3 & mid  \\
+mixed-mid   & mid + large & 7  & 3 & large \\
+mixed-large & large       & 5  & 2 & large \\
 \end{tblr}
 
 
