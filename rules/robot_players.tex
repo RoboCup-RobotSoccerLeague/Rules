@@ -3,18 +3,44 @@
 \section{Teams and Players}
 \label{sec:teams_and_players}
 
+\subsection{Division and complexity level}
+\label{sec:divisions}
+
+A team belongs to one division, which is one of Small, Mid and Large. Main-competition matches only take place between members in the same division.
+
+A team also has one complexity level, which is either Foundation or Advanced. Teams of different levels may play each other: if at least one team in the match is Foundation, then the match is Foundation, otherwise it is Advanced. (As of this draft version, the complexity level only affects the maximum team size.)
+
+Both the division and the complexity level of a team are defined before the competition (precise modality TBD) and cannot change during the competition itself.
+
+\improvement{Maybe move some definitions from the beginning of Comp. Structure over here?}
+
 \subsection{Number of Players}
 \label{sec:number_of_players}
-A match is played by two teams, each with ...\improvement{Needs to be discussed and defined in TC}
-%a \textbf{maximum} of 5 or 7 players, depending on the competition rules.
+A match is played by two teams, each with a \textbf{maximum} number of players determined by the division the game takes place in and the complexity level of the playing teams, as illustrated by the following table:
+
+\begin{tblr}{
+  width=1.0\linewidth,
+  colspec = {Q[l]Q[l]X[l]},
+  row{1}={fg=black, font=\bfseries}, %, 
+  hline{2} = {solid},
+  hline{3-Y} = {dashed},
+  vline{2,3} = {abovepos = -1, belowpos = -1},
+}
+Division & At least 1 Foundation team & 2 Advanced teams\\
+%
+Small & 4 & 7 \\
+Mid   & 3 & 5 \\
+Large & 3 & 5 \\
+\end{tblr}
 
 At most one player per team on the field may be designated as \emph{goalkeeper}, the others are all \emph{field players}.
-When playing at full strength, a team must have a \emph{goalkeeper} on the field.
+When playing at full strength, a team must have a \emph{goalkeeper} on the field. \improvement{Goalie distinguishing feature TBD: Number? Color?}
 
-Each of the players has a unique jersey number from the set $\{1, 2, 3, \ldots, 20\}$.
+Each of the players has a unique jersey number from the set $\{1, 2, 3, \ldots, 20\}$. \improvement{Will we have flexible numbers on the game controller? Otherwise, the numbers should be limited to the game controller numbers.}
+
 \subsection{Number of Substitutes}
 \label{sec:number_of_substitutes}
-In addition, each team may prepare \emph{substitute players} \improvement{Number of allowed substitutes, needs clarity - limited, unlimited?} outside of the field.
+In addition, each team may prepare \emph{substitute players} \improvement{Number of allowed substitutes, needs clarity - limited, unlimited?} outside the field.
 A \emph{substitute player} may be substituted in to become a \emph{field player} or \emph{goalkeeper}.
 
 \subsection{Substitution procedure}
@@ -47,7 +73,7 @@ Fourier   & GR1, GR1-Pro, and GR2 \\
 Unitiree  & G1++, H1++ \\
 \end{tblr}
 
-Additional humanoid robot platforms can be approved upon request. Please send your request for approval to \url{rc-spl-tc@lists.robocup.org}.
+Additional humanoid robot platforms can be approved upon request. Please send your request for approval to \url{rc-spl-tc@lists.robocup.org}. \improvement{Change to new mailing list when ready}
 
 \subsection{The Design of the Robots}
 \label{sec:design_of_robots}
@@ -101,7 +127,7 @@ A player must not use equipment or wear anything that is dangerous to himself or
 
 Robots competing in the physical competition must be equipped with an emergency stop button that makes the robot immediately desist with all motions, 
 or ideally go limp and/or cut power to the actuators.
-In addition to the emergency stop button, robots may only have up to two additional physical or virtual buttons: One to start the robot behaviour and one to stop the behaviour. 
+In addition to the emergency stop button, robots may only have up to two additional physical or virtual buttons\info{to be discussed: 4.7.1 allows buttons, community also requests to allow more buttons (NAO). Usage during the game can be restricted}: One to start the robot behaviour and one to stop the behaviour. 
 The buttons must be clearly labeled. If the robot has more buttons that cannot be detached, they must be visibly masked during the games.
 
 In ...tbd... size, robot handlers are allowed to carry an additional remote emergency stop button. \improvement{to be discussed, will there still be robot handlers?}
