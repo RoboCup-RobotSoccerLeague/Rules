@@ -301,6 +301,54 @@ However, communication that causes excessive discomfort to an audience, affects 
 \subsubsection{Wireless Communications}
 \label{sec:wireless}
 
-... \improvement{To be discussed. Take this section from the SPL rules?}
+The only wireless hardware allowed to be used by the teams are the wireless network interfaces integrated into the robots, and the access points provided by the event organizers.
+All other wireless hardware must be deactivated.
+A team may be disqualified if one of the team members violates this rule.
+
+Each team will get a range of IP addresses that can be used both for their robots and their computers.
+The network configuration (\eg IP addresses, channels, SSIDs, and required encryption) of the fields will be announced at the competition site.
+
+Wireless robot-to-robot communication among the robot players is allowed, as long as it uses the access points provided by the event organizers (using the so-called ad-hoc mode is prohibited), messages are sent via UDP broadcast, and each message's payload size does not exceed \qty{\TeamMessageSize}{\byte}.
+Each team will be allocated a single UDP port on which to send/receive their team messages.
+Specifically, a team's port will be 10000 plus that team's GameController number.
+Unicast communication between robots is prohibited.
+
+The amount of data transmitted by a team in a single game is limited.
+The limit is measured as the total number of UDP packets sent by any robots of a team.
+A team may not exceed \qty{\TeamMessageLimit}{packets} per game.
+For each minute of irregular extra time (\cf~\cref{sec:extra_time}), the limit is increased by \qty{\TeamMessageLimitMinute}{packets}.
+However, this does not apply to a team that has already exceeded its limit before.
+The GameController tracks the number of messages that have already been sent and includes counters for packets remaining per team in \texttt{RoboCupGameControlData}.
+
+If a team exceeds their limit the game is scored with 0 goals for the offending team.
+Robot-to-robot communication that violates the rules result in a game scored with 0 goals for the offending team (even when discovered after the game was finished).
+Messages are counted towards the limit during the \texttt{ready}, \texttt{set}, \texttt{playing} and \texttt{penalized} states.
+Limits do not apply during penalty kick shoot-out.
+If a knock-out game results in a draw and both teams exceeded their message limit, the team last exceeding their limit wins the game.
+
+The limit of allowed packets will be lowered in future competitions to encourage smart event-based communication.
+
+In addition to robot-to-robot communication, robots may send:
+\begin{itemize}
+ \item Additional status update packets that are sent to the GameController.
+ \item Team specific debug information may be sent to an external computer owned by the team.
+   A robot may send debug information at most once every \qty{2}{\second} in a single UDP packet.
+\end{itemize}
+These additional packets do not count towards the team's data limit and may not be used for robot-to-robot communication.
+They must be sent as unicast and may not be sent as broadcast.
+
+Teams and their robots must not listen into another team's communication.
+
+Robots are not allowed to be connected to access points of fields that are currently running official games of other teams.
+Robots may only communicate on fields that are not running an official game or fields which they are playing on.
+
+The GameController will use UDP to connect to the robots.
+The source distribution of the GameController provides the header file \emph{RoboCupGameControlData.h} that defines all messages sent by the GameController to the robots.
+They correspond to the \emph{robot states} described in \cref{sec:robot_states}.
+
+Robots send status updates (defined in \emph{RoboCupGameControlData.h}) to the GameController.
+These return packets must be addressed directly to the GameController PC (\ie not broadcast) and sent on the GameController return UDP port specified by the symbol \verb!GAMECONTROLLER_RETURN_PORT! in \emph{RoboCupGameControlData.h}.
+The rate at which return packets may be sent is limited to \qty{2}{\per\second}.
+
 
 The use of remote processing/sensing is prohibited.
